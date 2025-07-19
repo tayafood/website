@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAYAFOOD - Giải Pháp Gia Vị & Sốt Chuyên Nghiệp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Lato:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Lato', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        .scroll-animate { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+        .animate-show { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-gray-50 antialiased font-lato">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/48x48/ED1C24/fff?text=T" alt="TAYAFOOD Logo" class="h-12 w-12 rounded-full mr-3 shadow-md">
+                <h1 class="text-xl md:text-2xl font-bold text-red-600 tracking-wide">TAYAFOOD</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-800 hover:text-red-600 font-medium transition">Trang chủ</a>
+                <a href="#about" class="text-gray-800 hover:text-red-600 font-medium transition">Giới thiệu</a>
+                <a href="#solutions" class="text-gray-800 hover:text-red-600 font-medium transition">Giải pháp</a>
+                <a href="#products" class="text-gray-800 hover:text-red-600 font-medium transition">Sản phẩm</a>
+                <a href="#contact" class="text-gray-800 hover:text-red-600 font-medium transition">Liên hệ</a>
+            </nav>
+            <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-800 hover:text-red-600">Trang chủ</a>
+            <a href="#about" class="block py-2 text-gray-800 hover:text-red-600">Giới thiệu</a>
+            <a href="#solutions" class="block py-2 text-gray-800 hover:text-red-600">Giải pháp</a>
+            <a href="#products" class="block py-2 text-gray-800 hover:text-red-600">Sản phẩm</a>
+            <a href="#contact" class="block py-2 text-gray-800 hover:text-red-600">Liên hệ</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-br from-red-600 via-orange-500 to-green-700 text-white py-16 md:py-24">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 scroll-animate">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">Giải Pháp Gia Vị & Sốt Chuyên Nghiệp</h1>
+                <p class="text-lg md:text-xl mb-8">Đối tác tin cậy cho doanh nghiệp thực phẩm - Chất lượng vượt trội, Hương vị đột phá</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="bg-white text-red-600 font-bold py-3 px-6 rounded-lg text-center hover:bg-gray-100 transition duration-300">Liên hệ ngay</a>
+                    <a href="#solutions" class="border-2 border-white text-white font-bold py-3 px-6 rounded-lg text-center hover:bg-white hover:text-red-600 transition duration-300">Giải pháp B2B</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80" alt="TAYAFOOD Products" class="rounded-xl shadow-xl max-w-full h-auto scroll-animate">
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <div class="bg-gray-100 py-6">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12">
+                <div class="flex items-center">
+                    <i class="fas fa-certificate text-red-600 text-3xl mr-3"></i>
+                    <span class="font-medium">ISO 22000 Certified</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-shield-alt text-green-700 text-3xl mr-3"></i>
+                    <span class="font-medium">An toàn thực phẩm</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-industry text-orange-500 text-3xl mr-3"></i>
+                    <span class="font-medium">Nhà máy hiện đại</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Về TAYAFOOD</h2>
+                <div class="w-24 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Chuyên nghiên cứu và sản xuất gia vị, sốt chất lượng cao cho các doanh nghiệp thực phẩm, mì ăn liền, đồ hộp, và nhiều ngành hàng khác.</p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2 scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=500&q=80" alt="TAYAFOOD Factory" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2 scroll-animate">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Thông tin công ty</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-building text-red-600 mt-1 mr-3"></i>
+                                <span>CÔNG TY TNHH THỰC PHẨM TAYA VIỆT NAM</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-id-card text-green-700 mt-1 mr-3"></i>
+                                <span>Mã số doanh nghiệp: 0315201870</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-certificate text-orange-500 mt-1 mr-3"></i>
+                                <span>Chứng nhận ATTP số 5265/2022/BQLATTP-HCM</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-calendar-alt text-red-600 mt-1 mr-3"></i>
+                                <span>Ngày cấp: 17/10/2022</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-green-700 mt-1 mr-3"></i>
+                                <span>Ban Quản Lý An Toàn Thực Phẩm TP.HCM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section (B2B Focus) -->
+    <section id="solutions" class="py-16 bg-gradient-to-br from-white via-gray-50 to-green-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Giải pháp cho doanh nghiệp</h2>
+                <div class="w-24 h-1 bg-green-700 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">TAYAFOOD cung cấp giải pháp gia vị và sốt tối ưu, đáp ứng nhu cầu sản xuất lớn, kiểm soát chất lượng nghiêm ngặt, và hỗ trợ phát triển sản phẩm mới cho đối tác B2B.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 scroll-animate">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-flask text-red-600 text-2xl mr-3"></i>
+                        <h3 class="font-bold text-lg">R&D & Tùy chỉnh công thức</h3>
+                    </div>
+                    <p class="text-gray-600">Đội ngũ chuyên gia phát triển công thức riêng biệt, phù hợp với từng đối tác và sản phẩm.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 scroll-animate">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shield-alt text-green-700 text-2xl mr-3"></i>
+                        <h3 class="font-bold text-lg">Kiểm soát chất lượng</h3>
+                    </div>
+                    <p class="text-gray-600">Quy trình kiểm soát chất lượng nghiêm ngặt, đạt chuẩn quốc tế ISO 22000.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 scroll-animate">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-handshake text-orange-500 text-2xl mr-3"></i>
+                        <h3 class="font-bold text-lg">Hợp tác lâu dài</h3>
+                    </div>
+                    <p class="text-gray-600">Cam kết đồng hành cùng đối tác, hỗ trợ phát triển sản phẩm và mở rộng thị trường.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Sản phẩm nổi bật</h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Các dòng sản phẩm gia vị và sốt của TAYAFOOD được thiết kế tối ưu cho sản xuất công nghiệp, đảm bảo hương vị đặc trưng và chất lượng ổn định.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-red-100 via-orange-100 to-white rounded-xl shadow-lg overflow-hidden scroll-animate hover:scale-105 transition">
+                    <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Gia vị bột" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-red-600 mb-2">Gia vị dạng bột</h3>
+                        <p class="text-gray-600 mb-4">Đa dạng hương vị, phù hợp cho mì ăn liền, snack, đồ hộp.</p>
+                        <a href="#contact" class="inline-block bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-500 transition">Liên hệ</a>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-green-100 via-white to-orange-100 rounded-xl shadow-lg overflow-hidden scroll-animate hover:scale-105 transition">
+                    <img src="https://images.unsplash.com/photo-1464306076886-debede6b2b24?auto=format&fit=crop&w=400&q=80" alt="Sốt đặc chế" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-green-700 mb-2">Sốt đặc chế</h3>
+                        <p class="text-gray-600 mb-4">Sốt theo yêu cầu, đáp ứng mọi quy trình sản xuất công nghiệp.</p>
+                        <a href="#contact" class="inline-block bg-green-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-500 transition">Liên hệ</a>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-orange-100 via-white to-red-100 rounded-xl shadow-lg overflow-hidden scroll-animate hover:scale-105 transition">
+                    <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Giải pháp gia vị" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-orange-500 mb-2">Giải pháp gia vị</h3>
+                        <p class="text-gray-600 mb-4">Tư vấn, phát triển và cung cấp giải pháp gia vị toàn diện cho doanh nghiệp.</p>
+                        <a href="#contact" class="inline-block bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-600 transition">Liên hệ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Liên hệ hợp tác</h2>
+                <div class="w-24 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Đội ngũ TAYAFOOD luôn sẵn sàng tư vấn, hỗ trợ và hợp tác cùng các đối tác trong ngành thực phẩm.</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2 bg-white p-8 rounded-xl shadow-lg scroll-animate">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Gửi yêu cầu hợp tác</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Họ và tên</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                        </div>
+                        <div class="mb-4">
+                            <label for="company" class="block text-gray-700 font-medium mb-2">Công ty</label>
+                            <input type="text" id="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Số điện thoại</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Nội dung</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-500 transition duration-300">
+                            Gửi yêu cầu <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="md:w-1/2 bg-white p-8 rounded-xl shadow-lg scroll-animate">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Thông tin liên hệ</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-red-600 text-xl mr-3"></i>
+                            <span class="text-gray-700">Số 123, Đường ABC, Quận XYZ, TP.HCM, Việt Nam</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-green-700 text-xl mr-3"></i>
+                            <span class="text-gray-700">(+84) 123 456 789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-orange-500 text-xl mr-3"></i>
+                            <span class="text-gray-700">info@tayafood.com.vn</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-red-600 text-xl mr-3"></i>
+                            <span class="text-gray-700">Thứ 2 - Thứ 6: 8:00 - 17:00 | Thứ 7: 8:00 - 12:00</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-4">Theo dõi chúng tôi</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-red-600 hover:text-white transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-green-700 hover:text-white transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-orange-500 hover:text-white transition duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10 mt-10">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-lg font-bold mb-2">TAYAFOOD</h3>
+                    <p class="text-gray-400">Chuyên gia về gia vị và sốt thực phẩm chất lượng cao cho ngành công nghiệp thực phẩm.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-red-600"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-green-700"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-4 text-center text-gray-400 text-sm">
+                © 2025 TAYAFOOD. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animation
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.scroll-animate');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate-show');
+                }
+            });
+        }
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

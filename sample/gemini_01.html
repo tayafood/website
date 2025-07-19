@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAYAFOOD - Chuyên Gia Gia Vị & Sốt Thực Phẩm</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="TAYAFOOD - Cung cấp giải pháp gia vị và sốt chất lượng cao cho ngành công nghiệp thực phẩm. Khám phá các sản phẩm sáng tạo và dịch vụ R&D của chúng tôi.">
+    <meta name="keywords" content="gia vị, sốt thực phẩm, TAYAFOOD, giải pháp gia vị, R&D thực phẩm, gia vị công nghiệp">
+
+    <!-- Import Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Import Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    /* --- 1. CSS Variables & Global Styles --- */
+    :root {
+        --bg-light: #F8F6F1; /* Nền trắng kem */
+        --bg-dark: #2C3A47;  /* Nền tối cho footer */
+        --text-dark: #333333;
+        --text-light: #F8F6F1;
+        --text-secondary: #555;
+        --primary-color: #D35400; /* Cam cháy - màu nhấn mạnh */
+        --primary-hover-color: #E67E22;
+        --border-color: #E0E0E0;
+        --card-bg: #FFFFFF;
+        
+        --font-main: 'Inter', sans-serif;
+        --radius-sm: 6px;
+        --radius-md: 12px;
+        --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
+        --shadow-md: 0 5px 15px rgba(0,0,0,0.1);
+        --transition: all 0.3s ease-in-out;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-main);
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        font-size: 16px;
+        line-height: 1.7;
+        overflow-x: hidden; /* Ngăn cuộn ngang */
+    }
+    
+    /* --- Custom Scrollbar --- */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-light); }
+    ::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--primary-hover-color); }
+
+    /* --- Utility Classes --- */
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        background-color: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: var(--radius-sm);
+        transition: var(--transition);
+        border: 2px solid transparent;
+    }
+
+    .btn:hover {
+        background-color: var(--primary-hover-color);
+        transform: translateY(-3px);
+    }
+    
+    .btn-secondary {
+        background: transparent;
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+    
+    .btn-secondary:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    
+    h1, h2, h3 {
+        line-height: 1.3;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+    }
+
+    .section-subtitle {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 3rem auto;
+        color: var(--text-secondary);
+    }
+    
+    section {
+        padding: 80px 0;
+    }
+    
+    /* Animation on Scroll */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* --- 2. Header & Navigation --- */
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+        background-color: rgba(248, 246, 241, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        transition: var(--transition);
+        border-bottom: 1px solid transparent;
+    }
+    
+    .site-header.scrolled {
+        padding: 10px 0;
+        box-shadow: var(--shadow-sm);
+        border-bottom-color: var(--border-color);
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .logo i {
+        font-size: 1.2rem;
+    }
+
+    .main-nav {
+        display: none; /* Hidden on mobile */
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--bg-dark);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+    }
+    
+    .main-nav.active {
+        display: flex;
+        transform: translateX(0);
+    }
+    
+    .main-nav ul {
+        list-style: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .main-nav li {
+        margin-bottom: 25px;
+    }
+    
+    .main-nav a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+    
+    .main-nav a:hover {
+        color: var(--primary-color);
+    }
+
+    .menu-toggle {
+        display: block; /* Shown on mobile */
+        background: none;
+        border: none;
+        color: var(--text-dark);
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    
+    /* --- 3. Hero Section --- */
+    .hero {
+        padding-top: 150px;
+        padding-bottom: 100px;
+        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1547825402-24cc35a11674?q=80&w=2071&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+        opacity: 0.9;
+    }
+
+    .hero .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    /* --- 4. Solutions Section --- */
+    #solutions {
+        background-color: var(--card-bg);
+    }
+
+    .solutions-grid {
+        display: grid;
+        gap: 2rem;
+    }
+    
+    .solution-card {
+        background-color: var(--bg-light);
+        padding: 2.5rem 2rem;
+        text-align: center;
+        border-radius: var(--radius-md);
+        transition: var(--transition);
+    }
+    
+    .solution-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .solution-card .icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+    }
+    
+    .solution-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* --- 5. Quality Section --- */
+    .quality-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .quality-image {
+        width: 100%;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
+        object-fit: cover;
+        height: 300px;
+    }
+    
+    .quality-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .quality-list li {
+        list-style: none;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .quality-list .fa-check-circle {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+        margin-top: 5px;
+    }
+
+    /* --- 6. Products Section --- */
+    #products {
+        background-color: var(--card-bg);
+    }
+    
+    .products-grid {
+        display: grid;
+        gap: 1.5rem;
+    }
+    
+    .product-card {
+        background-color: white;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        border: 1px solid var(--border-color);
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .product-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+    
+    .product-info {
+        padding: 1.5rem;
+    }
+    
+    .product-info h3 {
+        font-size: 1.25rem;
+    }
+    
+    .product-info .category {
+        display: inline-block;
+        background-color: #e67e2220;
+        color: var(--primary-hover-color);
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+    }
+    
+    /* --- 7. Partners Section --- */
+    .partners-logos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        align-items: center;
+    }
+    
+    .partner-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .partner-logo img {
+        max-width: 120px;
+        filter: grayscale(100%);
+        opacity: 0.6;
+        transition: var(--transition);
+    }
+    
+    .partner-logo img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+
+    /* --- 8. CTA Section --- */
+    #cta {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+    }
+    
+    #cta h2 {
+        color: white;
+    }
+    
+    #cta .section-subtitle {
+        color: rgba(255,255,255,0.9);
+    }
+    
+    #cta .btn {
+        background-color: white;
+        color: var(--primary-color);
+    }
+    #cta .btn:hover {
+        background-color: var(--bg-light);
+    }
+    
+    /* --- 9. Footer --- */
+    .site-footer {
+        background-color: var(--bg-dark);
+        color: var(--text-light);
+        padding: 60px 0 20px 0;
+    }
+    
+    .footer-grid {
+        display: grid;
+        gap: 2.5rem;
+    }
+    
+    .footer-col h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: white;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .footer-col h4::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary-color);
+    }
+    
+    .footer-col p, .footer-col li {
+        margin-bottom: 0.75rem;
+        color: #ccc;
+    }
+    
+    .footer-col ul {
+        list-style: none;
+    }
+    
+    .footer-col a {
+        color: #ccc;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+    
+    .footer-col a:hover {
+        color: var(--primary-color);
+        padding-left: 5px;
+    }
+    
+    .social-icons a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border: 1px solid #555;
+        border-radius: 50%;
+        color: #ccc;
+        margin-right: 10px;
+    }
+    
+    .social-icons a:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: white;
+        padding-left: 0;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid #444;
+        font-size: 0.9rem;
+    }
+
+    /* --- 10. Responsive Breakpoints --- */
+
+    /* Tablet */
+    @media (min-width: 768px) {
+        h2 { font-size: 2.5rem; }
+        
+        .menu-toggle { display: none; }
+        .main-nav {
+            display: block;
+            position: static;
+            height: auto;
+            width: auto;
+            background: none;
+            transform: none;
+            flex-direction: row;
+            padding: 0;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 25px;
+        }
+        .main-nav li { margin: 0; }
+        .main-nav a {
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+        .main-nav a:hover { color: var(--primary-color); }
+        
+        .hero h1 { font-size: 3.5rem; }
+        .hero .btn-group { flex-direction: row; justify-content: center; }
+
+        .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+        
+        .quality-content {
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
+        }
+        .quality-image, .quality-text { flex: 1; }
+        
+        .products-grid { grid-template-columns: repeat(2, 1fr); }
+        .partners-logos { grid-template-columns: repeat(4, 1fr); }
+        .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+        .container {
+            width: 85%;
+        }
+        
+        .hero h1 { font-size: 4rem; }
+
+        .solutions-grid { grid-template-columns: repeat(3, 1fr); }
+        .products-grid { grid-template-columns: repeat(3, 1fr); }
+        .partners-logos { grid-template-columns: repeat(5, 1fr); }
+        .footer-grid { grid-template-columns: 2fr 1fr 1fr 1.5fr; }
+    }
+</style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="site-header">
+        <div class="container header-content">
+            <a href="#" class="logo fade-in">
+                <i class="fas fa-leaf"></i>
+                TAYAFOOD
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="#about">Về Chúng Tôi</a></li>
+                    <li><a href="#solutions">Giải Pháp</a></li>
+                    <li><a href="#products">Sản Phẩm</a></li>
+                    <li><a href="#quality">Chất Lượng</a></li>
+                    <li><a href="#contact-footer" class="btn btn-secondary">Liên Hệ</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero">
+            <div class="container fade-in">
+                <h1>Thổi Hồn Cho Ẩm Thực Hiện Đại</h1>
+                <p>TAYAFOOD - Chuyên gia cung cấp giải pháp gia vị & sốt toàn diện, nâng tầm hương vị cho ngành công nghiệp thực phẩm.</p>
+                <div class="btn-group">
+                    <a href="#solutions" class="btn">Khám Phá Giải Pháp</a>
+                    <a href="#contact-footer" class="btn btn-secondary">Yêu Cầu Tư Vấn</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SOLUTIONS SECTION ===== -->
+        <section id="solutions">
+            <div class="container">
+                <h2 class="fade-in">Giải Pháp Của Chúng Tôi</h2>
+                <p class="section-subtitle fade-in">Chúng tôi không chỉ bán gia vị, chúng tôi mang đến giải pháp hương vị được "đo ni đóng giày" cho từng khách hàng.</p>
+                <div class="solutions-grid">
+                    <div class="solution-card fade-in" style="transition-delay: 0.1s;">
+                        <i class="fas fa-vial icon"></i>
+                        <h3>Phát Triển R&D</h3>
+                        <p>Đội ngũ chuyên gia của chúng tôi hợp tác cùng bạn để nghiên cứu và phát triển công thức độc quyền, tạo nên lợi thế cạnh tranh.</p>
+                    </div>
+                    <div class="solution-card fade-in" style="transition-delay: 0.2s;">
+                        <i class="fas fa-pepper-hot icon"></i>
+                        <h3>Gia Vị Tẩm Ướp</h3>
+                        <p>Cung cấp các dòng gia vị tẩm ướp (dạng khô & dạng sệt) cho thịt, hải sản và các sản phẩm chế biến, đảm bảo hương vị đồng nhất.</p>
+                    </div>
+                    <div class="solution-card fade-in" style="transition-delay: 0.3s;">
+                        <i class="fas fa-blender icon"></i>
+                        <h3>Sốt & Nước Chấm</h3>
+                        <p>Từ sốt nền cho nhà hàng đến các loại nước chấm đóng chai tiện lợi, chúng tôi đáp ứng mọi nhu cầu về hương vị và kết cấu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== QUALITY COMMITMENT SECTION ===== -->
+        <section id="quality">
+            <div class="container">
+                <div class="quality-content">
+                    <div class="quality-image-wrapper fade-in">
+                       <img src="https://images.unsplash.com/photo-1623961919833-33b03e0a8117?q=80&w=1974&auto=format&fit=crop" alt="Nguyên liệu gia vị tự nhiên" class="quality-image">
+                    </div>
+                    <div class="quality-text fade-in" style="transition-delay: 0.2s;">
+                        <h3>Cam Kết Chất Lượng Vàng</h3>
+                        <p>Chất lượng là nền tảng trong mọi sản phẩm của TAYAFOOD. Chúng tôi tự hào mang đến sự an tâm và tin cậy cho đối tác.</p>
+                        <ul class="quality-list">
+                            <li><i class="fas fa-check-circle"></i> <div><strong>Nguyên Liệu Tuyển Chọn:</strong> Nguồn cung ứng minh bạch, ưu tiên nông sản địa phương và các nguyên liệu đạt chuẩn quốc tế.</div></li>
+                            <li><i class="fas fa-check-circle"></i> <div><strong>Công Nghệ Hiện Đại:</strong> Nhà máy sản xuất tuân thủ tiêu chuẩn ISO, HACCP, đảm bảo an toàn vệ sinh thực phẩm.</div></li>
+                            <li><i class="fas fa-check-circle"></i> <div><strong>Kiểm Soát Nghiêm Ngặt:</strong> Quy trình KCS (Kiểm soát chất lượng) đa tầng từ nguyên liệu đầu vào đến thành phẩm cuối cùng.</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURED PRODUCTS SECTION ===== -->
+        <section id="products">
+            <div class="container">
+                <h2 class="fade-in">Sản Phẩm Nổi Bật</h2>
+                <p class="section-subtitle fade-in">Khám phá một số sản phẩm tiêu biểu đã làm nên tên tuổi và được nhiều đối tác lớn tin dùng.</p>
+                <div class="products-grid">
+                    <div class="product-card fade-in" style="transition-delay: 0.1s;">
+                        <img src="https://images.unsplash.com/photo-1606852885915-a4cf545c1a7a?q=80&w=1964&auto=format&fit=crop" alt="Sốt BBQ Cay Nồng">
+                        <div class="product-info">
+                            <span class="category">Sốt BBQ</span>
+                            <h3>Sốt Ướp BBQ Hàn Quốc</h3>
+                            <p>Hương vị đậm đà, cay ngọt hài hòa, lý tưởng cho các món nướng trong nhà hàng và chuỗi F&B.</p>
+                        </div>
+                    </div>
+                    <div class="product-card fade-in" style="transition-delay: 0.2s;">
+                        <img src="https://images.unsplash.com/photo-1598515214211-89d38397a649?q=80&w=1976&auto=format&fit=crop" alt="Gia Vị Tẩm Ướp">
+                        <div class="product-info">
+                            <span class="category">Gia Vị Khô</span>
+                            <h3>Bột Gia Vị Gà Chiên Giòn</h3>
+                            <p>Công thức độc đáo tạo lớp vỏ giòn rụm, vàng ươm và thấm vị sâu bên trong thớ thịt.</p>
+                        </div>
+                    </div>
+                    <div class="product-card fade-in" style="transition-delay: 0.3s;">
+                        <img src="https://images.unsplash.com/photo-1625944230153-615598910484?q=80&w=1964&auto=format&fit=crop" alt="Nước Sốt Mì Trộn">
+                        <div class="product-info">
+                            <span class="category">Nước Sốt</span>
+                            <h3>Sốt Mì Trộn Vị Nấm Truffle</h3>
+                            <p>Mang hương vị cao cấp của nhà hàng vào sản phẩm đóng gói, tạo sự khác biệt cho thương hiệu của bạn.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== PARTNERS SECTION ===== -->
+        <section id="partners">
+            <div class="container">
+                <h2 class="fade-in">Đối Tác Tin Cậy</h2>
+                <p class="section-subtitle fade-in">Sự thành công của khách hàng là minh chứng rõ nhất cho chất lượng và dịch vụ của TAYAFOOD.</p>
+                <div class="partners-logos fade-in">
+                    <div class="partner-logo"><img src="https://via.placeholder.com/150x60/ccc/888?text=Partner+1" alt="Logo đối tác 1"></div>
+                    <div class="partner-logo"><img src="https://via.placeholder.com/150x60/ccc/888?text=Partner+2" alt="Logo đối tác 2"></div>
+                    <div class="partner-logo"><img src="https://via.placeholder.com/150x60/ccc/888?text=Partner+3" alt="Logo đối tác 3"></div>
+                    <div class="partner-logo"><img src="https://via.placeholder.com/150x60/ccc/888?text=Partner+4" alt="Logo đối tác 4"></div>
+                    <div class="partner-logo"><img src="https://via.placeholder.com/150x60/ccc/888?text=Partner+5" alt="Logo đối tác 5"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA SECTION ===== -->
+        <section id="cta">
+            <div class="container fade-in">
+                <h2>Sẵn Sàng Nâng Tầm Hương Vị?</h2>
+                <p class="section-subtitle">Hãy để các chuyên gia của TAYAFOOD giúp bạn tạo ra những sản phẩm ẩm thực đột phá. Liên hệ với chúng tôi ngay hôm nay để nhận tư vấn miễn phí.</p>
+                <a href="#contact-footer" class="btn">Bắt Đầu Ngay</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer" id="contact-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4><a href="#" class="logo">TAYAFOOD</a></h4>
+                    <p>Chuyên gia cung cấp giải pháp gia vị & sốt toàn diện, nâng tầm hương vị cho ngành công nghiệp thực phẩm.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Zalo"><i class="fas fa-comment-dots"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên Kết Nhanh</h4>
+                    <ul>
+                        <li><a href="#about">Về Chúng Tôi</a></li>
+                        <li><a href="#solutions">Giải Pháp</a></li>
+                        <li><a href="#products">Sản Phẩm</a></li>
+                        <li><a href="#quality">Chất Lượng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ Trợ</h4>
+                    <ul>
+                        <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+                        <li><a href="#">Chính Sách Bảo Mật</a></li>
+                        <li><a href="#">Điều Khoản Dịch Vụ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Thông Tin Liên Hệ</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận 1, TP.HCM</li>
+                        <li><i class="fas fa-phone-alt"></i> (028) 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@tayafood.com.vn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 TAYAFOOD. All Rights Reserved. </p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- Mobile Navigation Toggle ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    const navLinks = mainNav.querySelectorAll('a');
+
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            // Change icon to close (X) when menu is open
+            const icon = menuToggle.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+    
+    // --- Close menu when a link is clicked ---
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                 const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    });
+
+    // --- Sticky Header on Scroll ---
+    const header = document.getElementById('site-header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // --- Fade-in Animation on Scroll using Intersection Observer ---
+    const animatedElements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    });
+
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+
+});
+</script>
+
+</body>
+</html>
