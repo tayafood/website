@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAYAFOOD - Chuyên Gia Gia Vị & Sốt Thực Phẩm</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --bs-primary: #8a4f22; /* Brown color for food theme */
+            --bs-primary-rgb: 138, 79, 34;
+            --bs-secondary: #6c757d;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: var(--bs-primary);
+        }
+        
+        .section-subtitle {
+            font-weight: 300;
+            color: var(--bs-secondary);
+        }
+
+        .card-product {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            overflow: hidden;
+        }
+        .card-product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+        }
+        .card-product-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--bs-primary);
+        }
+
+        .btn-primary {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+        }
+        .btn-primary:hover {
+            background-color: #6d3f1b;
+            border-color: #6d3f1b;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            color: #fff;
+            background-color: var(--bs-primary);
+        }
+
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        @media (max-width: 767.98px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#page-top">
+                <!-- <img src="logo_placeholder.png" alt="TAYAFOOD Logo"> -->
+                TAYAFOOD
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#about">Giới Thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Sản Phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#solutions">Giải Pháp</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Liên Hệ</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-primary ms-lg-3 mt-2 mt-lg-0">Yêu Cầu Tư Vấn</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section vh-100 d-flex align-items-center" id="page-top">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-3">Chuyên Gia Gia Vị & Sốt Thực Phẩm</h1>
+            <p class="lead mb-4 col-lg-8 mx-auto">TAYAFOOD cung cấp giải pháp gia vị chất lượng cao, sáng tạo và toàn diện cho ngành công nghiệp thực phẩm hiện đại.</p>
+            <a href="#products" class="btn btn-primary btn-lg px-4">Khám Phá Sản Phẩm</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">VỀ TAYAFOOD</h2>
+                    <p class="lead section-subtitle">Đối tác tin cậy cho sự thành công của bạn</p>
+                </div>
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1974&auto=format&fit=crop" class="img-fluid rounded shadow" alt="Modern Kitchen Lab">
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="fw-light mb-3">Sứ mệnh của chúng tôi</h3>
+                        <p class="text-muted">Tại TAYAFOOD, chúng tôi không chỉ cung cấp gia vị. Chúng tôi mang đến hương vị của sự thành công, giúp các doanh nghiệp thực phẩm tạo ra những sản phẩm đột phá, chinh phục khẩu vị người tiêu dùng.</p>
+                        <div class="row mt-4 gy-4">
+                            <div class="col-md-6 d-flex">
+                                <i class="bi bi-patch-check-fill feature-icon me-3"></i>
+                                <div>
+                                    <h5 class="fw-bold">Chất Lượng Hàng Đầu</h5>
+                                    <p class="text-muted small">Nguyên liệu được tuyển chọn kỹ lưỡng, quy trình sản xuất đạt chuẩn quốc tế.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex">
+                                <i class="bi bi-lightbulb-fill feature-icon me-3"></i>
+                                <div>
+                                    <h5 class="fw-bold">Nghiên Cứu & Sáng Tạo</h5>
+                                    <p class="text-muted small">Luôn đi đầu trong việc phát triển công thức và hương vị mới mẻ, độc đáo.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex">
+                                <i class="bi bi-people-fill feature-icon me-3"></i>
+                                <div>
+                                    <h5 class="fw-bold">Hỗ Trợ Chuyên Sâu</h5>
+                                    <p class="text-muted small">Đội ngũ chuyên gia luôn sẵn sàng tư vấn, tối ưu hóa sản phẩm cùng bạn.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex">
+                                <i class="bi bi-truck feature-icon me-3"></i>
+                                <div>
+                                    <h5 class="fw-bold">Đối Tác Tin Cậy</h5>
+                                    <p class="text-muted small">Cam kết đồng hành lâu dài, cung ứng ổn định và hiệu quả.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">SẢN PHẨM NỔI BẬT</h2>
+                    <p class="lead section-subtitle">Khám phá danh mục gia vị đa dạng của chúng tôi</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card card-product shadow-sm h-100">
+                            <img src="https://images.unsplash.com/photo-1625944230134-36ff3a484718?q=80&w=1974&auto=format&fit=crop" class="card-img-top card-product-img" alt="Marinades">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Gia Vị Tẩm Ướp</h5>
+                                <p class="card-text text-muted">Giải pháp hoàn hảo cho các sản phẩm thịt, cá, hải sản, giúp thấm sâu và giữ trọn hương vị.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card card-product shadow-sm h-100">
+                            <img src="https://images.unsplash.com/photo-1598514983318-76127b545d62?q=80&w=1974&auto=format&fit=crop" class="card-img-top card-product-img" alt="Seasoning Powders">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Bột Gia Vị Tổng Hợp</h5>
+                                <p class="card-text text-muted">Dùng cho snack, mì ăn liền, thực phẩm chế biến sẵn với hương vị đặc trưng, ổn định.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card card-product shadow-sm h-100">
+                            <img src="https://images.unsplash.com/photo-1604332349007-9b23f2f53448?q=80&w=1964&auto=format&fit=crop" class="card-img-top card-product-img" alt="Sauces & Dips">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Sốt & Nước Chấm</h5>
+                                <p class="card-text text-muted">Đa dạng các loại sốt từ Á đến Âu, tiện lợi và phù hợp với nhiều ứng dụng khác nhau.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card card-product shadow-sm h-100">
+                            <img src="https://images.unsplash.com/photo-1478555797339-1282531e285d?q=80&w=2070&auto=format&fit=crop" class="card-img-top card-product-img" alt="Natural Flavors">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Hương Liệu & Chiết Xuất</h5>
+                                <p class="card-text text-muted">Nguồn hương liệu tự nhiên, an toàn, giúp tạo nên dấu ấn riêng cho sản phẩm của bạn.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Section -->
+        <section id="solutions" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">GIẢI PHÁP TOÀN DIỆN</h2>
+                    <p class="lead section-subtitle">Chúng tôi không chỉ bán sản phẩm, chúng tôi cung cấp giải pháp</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="solutionsAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <i class="bi bi-tools me-2"></i><strong>Nghiên cứu & Phát triển (R&D)</strong>
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#solutionsAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Đội ngũ R&D của TAYAFOOD sẽ làm việc trực tiếp với bạn để phát triển các công thức gia vị độc quyền, phù hợp với định hướng sản phẩm và thị hiếu của thị trường mục tiêu.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <i class="bi bi-graph-up-arrow me-2"></i><strong>Tối Ưu Hóa Chi Phí & Quy Trình</strong>
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#solutionsAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Chúng tôi giúp bạn phân tích và cải tiến công thức hiện có để tối ưu hóa giá thành sản phẩm mà vẫn đảm bảo chất lượng hương vị, tăng cường khả năng cạnh tranh trên thị trường.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <i class="bi bi-box-seam me-2"></i><strong>Sản Xuất Theo Yêu Cầu (OEM/ODM)</strong>
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#solutionsAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Với hệ thống nhà xưởng hiện đại, chúng tôi nhận gia công, sản xuất các sản phẩm gia vị, nước sốt theo công thức và thương hiệu của riêng bạn với chất lượng đồng nhất và bảo mật tuyệt đối.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">LIÊN HỆ VỚI CHÚNG TÔI</h2>
+                    <p class="lead section-subtitle">Hãy để TAYAFOOD giúp bạn tạo ra những sản phẩm tuyệt vời</p>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <form>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="name" placeholder="Họ và Tên">
+                                <label for="name">Họ và Tên</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="company" placeholder="Tên công ty">
+                                <label for="company">Tên công ty</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                                <label for="email">Địa chỉ Email</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Nội dung yêu cầu" id="message" style="height: 120px"></textarea>
+                                <label for="message">Nội dung yêu cầu</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Gửi Yêu Cầu</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 class="fw-light mb-4">Thông tin liên lạc</h4>
+                        <div class="d-flex mb-3">
+                            <i class="bi bi-geo-alt-fill feature-icon me-3 fs-4"></i>
+                            <div>
+                                <strong>Địa chỉ:</strong><br>
+                                <span class="text-muted">Khu Công nghiệp ABC, Quận XYZ, Thành phố Hồ Chí Minh, Việt Nam</span>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="bi bi-telephone-fill feature-icon me-3 fs-4"></i>
+                            <div>
+                                <strong>Điện thoại:</strong><br>
+                                <a href="tel:+84123456789" class="text-decoration-none text-muted">(+84) 123 456 789</a>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="bi bi-envelope-fill feature-icon me-3 fs-4"></i>
+                            <div>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:info@tayafood.com" class="text-decoration-none text-muted">info@tayafood.com</a>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.447176465452!2d106.62965297591901!3d10.77701428937172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529402dd1594b%3A0x1b32d2f854a8e2a1!2zS2h1IGPDtG5nIG5naGnhu4dwIFTDom4gQsOsbmgsIFBowrDhu51uZyBUw6J5IFRoYW5oLCBUw6JuIFBow7osIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1701072998632!5m2!1svi!2s" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">© 2023 TAYAFOOD. All Rights Reserved.</p>
+            <p class="mb-0 small">Mang hương vị đến thành công của bạn.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript for smooth scrolling and navbar shrink
+        window.addEventListener('DOMContentLoaded', event => {
+            // Navbar shrink function
+            var navbarShrink = function () {
+                const navbarCollapsible = document.body.querySelector('#mainNav');
+                if (!navbarCollapsible) {
+                    return;
+                }
+                if (window.scrollY === 0) {
+                    navbarCollapsible.classList.remove('bg-dark');
+                    navbarCollapsible.classList.add('bg-transparent');
+                } else {
+                    navbarCollapsible.classList.remove('bg-transparent');
+                    navbarCollapsible.classList.add('bg-dark');
+                }
+            };
+
+            // Shrink the navbar 
+            navbarShrink();
+
+            // Shrink the navbar when page is scrolled
+            document.addEventListener('scroll', navbarShrink);
+
+            // Activate Bootstrap scrollspy on the main nav element
+            const mainNav = document.body.querySelector('#mainNav');
+            if (mainNav) {
+                new bootstrap.ScrollSpy(document.body, {
+                    target: '#mainNav',
+                    rootMargin: '0px 0px -40%',
+                });
+            };
+
+            // Collapse responsive navbar when a nav-link is clicked
+            const navLinks = document.querySelectorAll('.nav-link');
+            const responsiveNavItems = [].slice.call(navLinks);
+            responsiveNavItems.map(function (responsiveNavItem) {
+                responsiveNavItem.addEventListener('click', () => {
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    const navbarCollapse = document.querySelector('#navbarResponsive');
+                    if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                         if (navbarCollapse.classList.contains('show')) {
+                             bootstrap.Collapse.getOrCreateInstance(navbarCollapse).hide();
+                         }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
