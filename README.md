@@ -1,3 +1,5 @@
+[![Deploy static content to Pages](https://github.com/tayafood/website/actions/workflows/static.yml/badge.svg)](https://github.com/tayafood/website/actions/workflows/static.yml)
+
 # website
 TAYAFOOD Website
 
